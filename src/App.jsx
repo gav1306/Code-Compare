@@ -75,6 +75,12 @@ function App() {
     }
   }, [selectedText, text.input]);
 
+  useEffect(() => {
+    if(!startCompare) {
+      setHighlightedSearch(text.input);
+    }
+  },[startCompare])
+
   const isButtonDisabled = !text.input.trim() || !text.output.trim();
 
   return (

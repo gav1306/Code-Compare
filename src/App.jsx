@@ -64,7 +64,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (selectedText) {
+    if (selectedText && startCompare) {
       const highlightedParagraph = highlightSearchTerm(
         text.input,
         selectedText
@@ -73,13 +73,7 @@ function App() {
     } else {
       setHighlightedSearch(text.input);
     }
-  }, [selectedText, text.input]);
-
-  useEffect(() => {
-    if(!startCompare) {
-      setHighlightedSearch(text.input);
-    }
-  },[startCompare])
+  }, [selectedText, startCompare, text.input]);
 
   const isButtonDisabled = !text.input.trim() || !text.output.trim();
 

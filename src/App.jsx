@@ -72,6 +72,7 @@ function App() {
       setHighlightedSearch(highlightedParagraph);
     } else {
       setHighlightedSearch(text.input);
+      setSelectedText("")
     }
   }, [selectedText, startCompare, text.input]);
 
